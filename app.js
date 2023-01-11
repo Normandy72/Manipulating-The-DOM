@@ -18,7 +18,8 @@
         controller: ShoppingListDirectiveController,
         controllerAs: 'list',
         bindToController: true,
-        link: ShoppingListDirectiveLink
+        link: ShoppingListDirectiveLink,
+        transclude: true
       };
     
       return ddo;
@@ -91,6 +92,8 @@
     
       list.itemName = "";
       list.itemQuantity = "";
+
+      list.warning = 'COOKIES DETECTED!';
     
       list.addItem = function () {
         shoppingList.addItem(list.itemName, list.itemQuantity);
